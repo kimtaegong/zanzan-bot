@@ -15,3 +15,6 @@ npm start
 ```
 Node.js
 ```
+
+# Version
+1.0.0
