@@ -85,9 +85,9 @@ Thank u for reading it
                     .setStyle('LINK')
                     .setURL('https://www.instagram.com/zzaann728/'),
                 new MessageButton()
-                    .setLabel('팬카페 (제작중) 트게더로 이동됨')
+                    .setLabel('팬카페')
                     .setStyle('LINK')
-                    .setURL('https://tgd.kr/s/zanzan_zz')
+                    .setURL('https://cafe.naver.com/zanzan728')
             );
             message.channel.send({
                 content: content,
