@@ -18,43 +18,40 @@ const client = new Client({
 
 client.on('ready', () => {
     console.log('Zanzan Bot is ready.');
-});
 
-client.on('message', async message => {
-    if (message.channel.name === rule) {
-        var contents = message.content.split(' ');
-        if (contents[0] === prefix+'추가') {
-            message.delete();
-            const content = `\`\`\`
+    client.channels.cache.get('892987643602804797').bulkDelete(1).then(console.log(`Message ${1} deleted`))
+    const content = `\`\`\`
 ★규칙 숙지 해주시고 글 밑에 '입쨘' 버튼 눌러주시면 권한을 받으실 수 있습니다.★
 
 권한 받지 않아도 공지&방송 알림은 다 받을 수 있습니다~
 •밑에는 바로가기 링크! 
 •자세한 내용이나 일정은 (공지 채널) 잔잔
-            
+•직접 만든 봇이라 매일 알람이 뜨기 때문에 규칙 채널 알림 끄는 것을 추천 드립니다!
+
 -The English explanation is at the bottom.
             
             
     쨘엄령 
 ※규칙 
-1. 인사는 '잔하' or '자나'
-2. 방송 중에 나가실 때는 조용하게 부탁드립니다. (잔바,오뱅화×)
-3. 트수분들간 닉네임 언급,친목 x
-4. 언급되지 않은 타 스트리머분 이야기 x 
-5. 정치, 욕설, 종교적인 이야기 x
-6. 불쾌감을 주는 선 넘는 드립들은 경고 후 벤
-7. 클립 생성 하실 때는 제목을 꼭 붙여주세요!!
-8. 언팔 협박, 도배는 임차 후 벤
+1. 시청자 수 언급, 시청자 닉 언급, 친목 x
+3. 타 스트리머분 언급, 유도 x
+4. 방송과 관련 없는 이야기 x  (TMI는 사연으로)
+5. 완장질 x (무분별한 '해주세요', '하지마세요')
+6. 불쾌감을 주는 언행 x (정치, 종교, 욕설, 폄하,도배 등등)
+7. 방송 중에 나가실 때는 조용하게 부탁 드립니다. 
             
             
-저는 임차도 잘 드리지 않고 경고나 주의로 드리는 편입니다.
-벤은 무조건. 영구벤 입니다
+클립은 제목을 꼭 붙여주세요.
+(제목이 없는 클립, 잔잔과 연관 없는 클립들은 전부 삭제됩니다)
+
+다같이 보는 방송입니다.
+모두가 편하게 소통하실 수 있게 예의를 지켜주세요.
             
             
 Rule
             
 Korean chat only. (It's a Korean broadcast.)
-You can only use foreign languages on Instagram.
+You can only use foreign languages on SNS.
 Don't say anything unrelated to the story during the broadcast.
 Don't force me to speak foreign languages.
 (It's discrimination against other languages.)
@@ -77,19 +74,19 @@ Thank u for reading it
                     .setStyle('LINK')
                     .setURL('https://www.twitch.tv/zanzan_zz'),
                 new MessageButton()
-                    .setLabel('쨘게더')
+                    .setLabel('팬카페')
                     .setStyle('LINK')
-                    .setURL('https://tgd.kr/s/zanzan_zz'),
+                    .setURL('https://cafe.naver.com/zanzan728'),
+                new MessageButton()
+                    .setLabel('사연')
+                    .setStyle('LINK')
+                    .setURL('https://docs.google.com/forms/d/1AO5SSW-kbcctteUPjOdn_1saVBIiwu34URlbnS9mZE4/edit'),
                 new MessageButton()
                     .setLabel('인스타그램')
                     .setStyle('LINK')
-                    .setURL('https://www.instagram.com/zzaann728/'),
-                new MessageButton()
-                    .setLabel('팬카페')
-                    .setStyle('LINK')
-                    .setURL('https://cafe.naver.com/zanzan728')
+                    .setURL('https://www.instagram.com/zzaann728/')
             );
-            message.channel.send({
+            client.channels.cache.get('892987643602804797').send({
                 content: content,
                 components: [row],
                 ephemeral: true
@@ -99,13 +96,13 @@ Thank u for reading it
                 return i.customId === 'btnConfirm';
             };
 
-            const collector = message.channel.createMessageComponentCollector({
+            const collector = client.channels.cache.get('892987643602804797').createMessageComponentCollector({
                 filter
             });
 
             collector.on('collect', async i => {
                 if (i.customId === 'btnConfirm') {
-                    const add_role = message.guild.roles.cache.find(role => role.name === '잔망단(잔광단)');
+                    const add_role = client.channels.cache.get('892987643602804797').guild.roles.cache.find(role => role.name === '잔망단(잔광단)');
                     var isDouble = false;
                     for (let j = 0; j < i.member.roles.cache.size; j++) {
                         if (i.member.roles.cache.at(j).name === '잔망단(잔광단)') {
@@ -132,6 +129,17 @@ Thank u for reading it
             collector.on('end', collected => {
                 console.log(`Collected ${collected.size} items`);
             })
+});
+
+client.on('message', async message => {
+    if (message.content === '^id') {
+        message.channel.send(message.channelId)
+    }
+    if (message.channel.name === rule) {
+        var contents = message.content.split(' ');
+        if (contents[0] === prefix+'추가') {
+            message.delete();
+            
         }
     }
 });
