@@ -21,47 +21,49 @@ client.on('ready', () => {
 
     client.channels.cache.get('892987643602804797').bulkDelete(1).then(console.log(`Message ${1} deleted`))
     const content = `\`\`\`
-★규칙 숙지 해주시고 글 밑에 '입쨘' 버튼 눌러주시면 권한을 받으실 수 있습니다.★
+    ★규칙을 숙지해 주시고 글 밑에 '입쨘' 버튼 눌러주시면 권한을 받음과 동시에 여러 채널(소통방, 사진방 등등)이 공개 됩니다★
 
-권한 받지 않아도 공지&방송 알림은 다 받을 수 있습니다~
-•밑에는 바로가기 링크! 
-•자세한 내용이나 일정은 (공지 채널) 잔잔
-•직접 만든 봇이라 매일 알람이 뜨기 때문에 규칙 채널 알림 끄는 것을 추천 드립니다!
-
--The English explanation is at the bottom.
-            
-            
-    쨘엄령 
-※규칙 
-1. 시청자 수 언급, 시청자 닉 언급, 친목 x
-3. 타 스트리머분 언급, 유도 x
-4. 방송과 관련 없는 이야기 x  (TMI는 사연으로)
-5. 완장질 x (무분별한 '해주세요', '하지마세요')
-6. 불쾌감을 주는 언행 x (정치, 종교, 욕설, 폄하,도배 등등)
-7. 방송 중에 나가실 때는 조용하게 부탁 드립니다. 
-            
-            
-클립은 제목을 꼭 붙여주세요.
-(제목이 없는 클립, 잔잔과 연관 없는 클립들은 전부 삭제됩니다)
-
-다같이 보는 방송입니다.
-모두가 편하게 소통하실 수 있게 예의를 지켜주세요.
-            
-            
-Rule
-            
-Korean chat only. (It's a Korean broadcast.)
-You can only use foreign languages on SNS.
-Don't say anything unrelated to the story during the broadcast.
-Don't force me to speak foreign languages.
-(It's discrimination against other languages.)
-Please focus on me without making friends with other viewers.
-            
-If you don't follow the rules, I'll ban you permanently.
-            
-Please read the rules and click the '입쨘' button at the bottom of the post, you will receive permission.
-            
-Thank u for reading it 
+    -The English explanation is at the bottom.
+    
+    권한 받지 않아도 공지&방송 알림은 다 받을 수 있습니다~
+    •밑에 버튼들은 바로가기 링크입니다! 
+    •자세한 규칙이나 일정은 (공지 채널) #잔잔
+    •직접 만든 봇이라 매일 알람이 뜨기 때문에 규칙 채널 알림 끄는 것을 추천 드립니다!
+    
+    
+    [디스코드 규칙]
+    
+    1. 시청자분들 간에 친목(대화, 언급) X
+    
+    2. 타 스트리머, 크리에이터 유도&언급 X
+    
+    3. TMI는 일기장 or [팬카페] 자유 게시판에만 적어 주세요.
+    (긴 썰이나 고민은 밑에 버튼 사연 링크로 부탁 드립니다.)
+    
+    4. 불쾌감을 주는 언행 X (도배, 정치, 욕설, 종교 등등)
+    
+    5. 생방송 중에는 디스코드 사용 금지
+    
+    다같이 편하게 소통하는 곳이니 예의를 지켜주세요!
+    위 사항을 지키지 않을 시 경고, 경고 3회 누적 시 강제 추방을 당할 수 있습니다.
+    (팬아트는 팬카페로 부탁 드립니다. 화질도 더 좋게 올라가요! ㅇㅅㅇ)b)
+    
+    
+    [Discord Rule]
+    
+    Please be aware of the rules and press the "입쨘" button at the bottom of the text. At the same time, several channels (communication room, photo room, etc.) will be released.            
+    Even if you don't have permission, you can get announcements and broadcast notifications.
+                
+    1. Please keep chat in korean, so that the moderators and zanzan can better moderate what’s being said in chat.
+    2. You can only use foreign languages on Instagram.
+    3. Don't say anything unrelated to the story.
+    4. Don't force me to speak foreign languages.
+    (It's discrimination against other languages.)
+    5. Please focus on me without making friends with other viewers.
+                
+    If you don't follow the rules, I'll ban you permanently.
+                
+    Thank u for reading it. :D
             \`\`\``;
             const row = new MessageActionRow()
             .addComponents(
